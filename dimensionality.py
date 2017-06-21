@@ -20,3 +20,13 @@ def dimensionality(array):
     else:
         return 1 + max(dimensionality(item) for item in array)
 
+print(dimensionality([]))
+print(dimensionality([1]))
+print(dimensionality([[2]]))
+print(dimensionality([[2], [2, [3]]]))
+print(dimensionality([[[[[[1]]]]]]))
+print(dimensionality(['a']))
+print(dimensionality([['a', ['b']]]))
+
+# for the performance of the function it is O(n) where n
+# is the number of elements.
