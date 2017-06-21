@@ -22,9 +22,12 @@ bad_url = re.compile("href=\"shittylistings\.com\"")
 bad_files = []
 for root, directory, files in os.walk('./website'):
     for file in files:
+        # only deal with html files
         if file.endswith('.html'):
             with open(root + '/' + file) as html_file:
                 for line in html_file:
+                    # if the file contains a link to shittylistings
+                    # add it to the list
                     if bad_url.search(line):
                         bad_files.append(root + "/" + file)
 print(bad_files)
