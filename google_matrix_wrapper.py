@@ -50,6 +50,6 @@ def showing_distance():
     r = requests.get(f"https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins={location}&destinations={destination}&departure_time={seconds}&key=INSERT_API_KEY_HERE")
     print("")
     distance = r.json()['rows'][0]['elements'][0]['distance']['text']
-    print(f"You will have to drive {distance} miles")
+    print(f"You will have to drive {distance}")
 
 showing_distance()
