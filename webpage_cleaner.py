@@ -30,5 +30,5 @@ for root, directory, files in os.walk('./website'):
                     # add it to the list
                     if bad_url.search(line):
                         bad_files.append(root + "/" + file)
-print(bad_files)
-
+for filename in bad_files:
+    print(filename)
